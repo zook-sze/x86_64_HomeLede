@@ -13,7 +13,7 @@ on:
     inputs:
       ssh:
         description: 'SSH connection to Actions'
-        required: ture
+        required: true
         default: 'false'
 
 #定时
