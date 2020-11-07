@@ -101,9 +101,12 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-#默认编译配置
-    - name: Prepare Compile
-      run: cd openwrt && ./prepareCompile.sh
+#更新feeds
+    - name: Update feeds
+      run: cd openwrt && ./scripts/feeds update -a
+#配置feeds
+    - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a
 #加载自定义配置
     - name: Load custom configuration
       run: |
